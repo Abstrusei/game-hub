@@ -36,7 +36,12 @@ function App() {
         </GridItem>
       </Show>
       <GridItem area="main">
-        <PlatformSelector />
+        <PlatformSelector
+          selectedPlatform={selectedPlatform}
+          onSelectPlatform={(selectedPlatform) =>
+            setSelectedPlatform(selectedPlatform)
+          }
+        />
         <GameGrid
           selectedGenre={selectedGenre}
           selectedPlatform={selectedPlatform}

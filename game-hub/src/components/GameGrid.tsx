@@ -11,8 +11,12 @@ interface IGameGridProps {
   selectedPlatform: IPlatform | null;
 }
 
-const GameGrid = ({ selectedGenre }: IGameGridProps) => {
-  const { data: games, error, isLoading } = useGames(selectedGenre);
+const GameGrid = ({ selectedGenre, selectedPlatform }: IGameGridProps) => {
+  const {
+    data: games,
+    error,
+    isLoading,
+  } = useGames(selectedGenre, selectedPlatform);
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
   return (
