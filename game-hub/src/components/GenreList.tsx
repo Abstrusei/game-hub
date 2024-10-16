@@ -11,9 +11,10 @@ import { getCroppedImageUrl } from "../services/image-url";
 
 interface IGenreListProps {
   onSelectGenre: (genre: IGenre) => void;
+  selectedGenre: IGenre | null;
 }
 
-const GenreList = ({ onSelectGenre }: IGenreListProps) => {
+const GenreList = ({ selectedGenre, onSelectGenre }: IGenreListProps) => {
   const { data: genres, isLoading, error } = useGenres();
 
   if (error) return null;
@@ -30,6 +31,7 @@ const GenreList = ({ onSelectGenre }: IGenreListProps) => {
               src={getCroppedImageUrl(genre.image_background)}
             />
             <Button
+              fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
               onClick={() => onSelectGenre(genre)}
               fontSize="lg"
               variant="link"
