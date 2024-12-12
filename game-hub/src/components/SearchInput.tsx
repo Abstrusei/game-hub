@@ -21,6 +21,7 @@ const SearchInput = ({ onSearch }: ISearchInputProps) => {
         <Input
           ref={ref}
           borderRadius={20}
+          backgroundColor="#3a3a3a"
           placeholder="Search games..."
           variant="filled"
         />
